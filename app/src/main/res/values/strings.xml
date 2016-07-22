@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">精灵宝可梦 穿越</string>
+    <string name="pref_key_open">pref_key_open</string>
+    <string name="pref_move_button_open">pref_key_move_btn_open</string>
+    <string name="pref_key_location_lat">pref_key_location_lat</string>
+    <string name="pref_key_location_lon">pref_key_location_lon</string>
+    <string name="def_location_lat">-35.277602</string>
+    <string name="def_location_lon">149.096300</string>
+</resources>
