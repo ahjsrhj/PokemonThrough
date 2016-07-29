@@ -1,90 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.yarolegovich.mp.MaterialPreferenceScreen
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_screen"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    <FrameLayout
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true" >
+
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="center"
-            android:src="@drawable/icon" />
-    </FrameLayout>
+        android:layout_height="100dp"
+        android:fitsSystemWindows="true" >
 
-    <com.yarolegovich.mp.MaterialPreferenceCategory
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <com.yarolegovich.mp.MaterialPreferenceScreen
+        android:id="@+id/main_screen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:mpc_title="设置"
-        >
+        android:layout_height="match_parent" >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/icon" />
+        </FrameLayout>
 
-        <com.yarolegovich.mp.MaterialSwitchPreference
+        <com.yarolegovich.mp.MaterialPreferenceCategory
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:mp_icon="@drawable/ic_settings"
-            app:mp_key="@string/pref_key_open"
-            app:mp_title="开启修改" />
+            app:mpc_title="设置"
+            >
 
-        <com.yarolegovich.mp.MaterialSwitchPreference
-            android:id="@+id/open_move_button"
+            <com.yarolegovich.mp.MaterialSwitchPreference
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mp_icon="@drawable/ic_settings"
+                app:mp_key="@string/pref_key_open"
+                app:mp_title="开启修改" />
+
+            <com.yarolegovich.mp.MaterialSwitchPreference
+                android:id="@+id/open_move_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mp_icon="@drawable/ic_games"
+                app:mp_key="@string/pref_move_button_open"
+                app:mp_title="开启摇杆" />
+
+            <com.yarolegovich.mp.MaterialStandardPreference
+                android:id="@+id/move_button_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mp_icon="@drawable/ic_open_with"
+                app:mp_title="摇杆位置" />
+
+
+
+        </com.yarolegovich.mp.MaterialPreferenceCategory>
+
+        <com.yarolegovich.mp.MaterialPreferenceCategory
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:mp_icon="@drawable/ic_games"
-            app:mp_key="@string/pref_move_button_open"
-            app:mp_title="开启摇杆" />
+            app:mpc_title="经纬度" >
+            <com.yarolegovich.mp.MaterialEditTextPreference
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mp_icon="@drawable/ic_location_on"
+                app:mp_default_value="@string/def_location_lon"
+                app:mp_key="@string/pref_key_location_lon"
+                app:mp_show_value="onRight"
+                app:mp_title="修改经度" />
 
-        <com.yarolegovich.mp.MaterialStandardPreference
-            android:id="@+id/move_button_position"
+            <com.yarolegovich.mp.MaterialEditTextPreference
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mp_icon="@drawable/ic_location_on"
+                app:mp_default_value="@string/def_location_lat"
+                app:mp_key="@string/pref_key_location_lat"
+                app:mp_show_value="onRight"
+                app:mp_title="修改纬度" />
+        </com.yarolegovich.mp.MaterialPreferenceCategory>
+
+        <com.yarolegovich.mp.MaterialPreferenceCategory
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:mp_icon="@drawable/ic_open_with"
-            app:mp_title="摇杆位置" />
+            app:mpc_title="关于"
+            >
 
-
-
-    </com.yarolegovich.mp.MaterialPreferenceCategory>
-
-    <com.yarolegovich.mp.MaterialPreferenceCategory
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:mpc_title="经纬度" >
-        <com.yarolegovich.mp.MaterialEditTextPreference
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:mp_icon="@drawable/ic_location_on"
-            app:mp_default_value="@string/def_location_lon"
-            app:mp_key="@string/pref_key_location_lon"
-            app:mp_show_value="onRight"
-            app:mp_title="修改经度" />
-
-        <com.yarolegovich.mp.MaterialEditTextPreference
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:mp_icon="@drawable/ic_location_on"
-            app:mp_default_value="@string/def_location_lat"
-            app:mp_key="@string/pref_key_location_lat"
-            app:mp_show_value="onRight"
-            app:mp_title="修改纬度" />
-    </com.yarolegovich.mp.MaterialPreferenceCategory>
-
-    <com.yarolegovich.mp.MaterialPreferenceCategory
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:mpc_title="关于"
-        >
-
-        <com.yarolegovich.mp.MaterialStandardPreference
-            android:id="@+id/pref_about"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:mp_title="关于"
-            app:mp_icon="@drawable/ic_info_outline" />
-    </com.yarolegovich.mp.MaterialPreferenceCategory>
+            <com.yarolegovich.mp.MaterialStandardPreference
+                android:id="@+id/pref_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mp_title="关于"
+                app:mp_icon="@drawable/ic_info_outline" />
+        </com.yarolegovich.mp.MaterialPreferenceCategory>
 
 
 
 
-</com.yarolegovich.mp.MaterialPreferenceScreen>
+    </com.yarolegovich.mp.MaterialPreferenceScreen>
+
+
+</android.support.design.widget.CoordinatorLayout>

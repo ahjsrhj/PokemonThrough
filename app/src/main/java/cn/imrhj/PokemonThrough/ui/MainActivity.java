@@ -7,6 +7,8 @@ import android.graphics.Point;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceManager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         MaterialPreferences.instance().setStorageModule(createStrageFactory());
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
 
         preferences = getSharedPreferences(BuildConfig.APPLICATION_ID, Context.MODE_WORLD_READABLE);
         preferences.registerOnSharedPreferenceChangeListener(this);
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
         initMoveButton();
         setMoveButton(preferences.getBoolean(Prefs.KEY_MOVE_BTN_OPEN, false));
+
 
 
 

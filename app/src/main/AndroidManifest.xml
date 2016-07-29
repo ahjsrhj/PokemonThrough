@@ -22,7 +22,9 @@
             android:name="xposedminversion"
             android:value="62" />
 
-        <activity android:name="cn.imrhj.PokemonThrough.ui.MainActivity" >
+        <activity android:name="cn.imrhj.PokemonThrough.ui.MainActivity"
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
